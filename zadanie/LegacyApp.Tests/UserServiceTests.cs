@@ -70,5 +70,25 @@ public class UserServiceTests
         
         Assert.Throws<ArgumentException>(action);
     }
+    [Fact]
+    public void AddUser_ReturnsFalseIfAgeUnder21()
+    {
+        var userService = new UserService();
+
+        // Act
+        var result = userService.AddUser(
+            "Jan",
+            "Kowalski",
+            "kowalski@kowal.com",
+            DateTime.Parse("2020-01-01"),
+            1
+        );
+        
+        
+        
+        // Assert
+        
+        Assert.False(result);
+    }
     
 }

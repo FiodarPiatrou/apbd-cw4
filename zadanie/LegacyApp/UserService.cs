@@ -33,7 +33,7 @@ namespace LegacyApp
                 FirstName = firstName,
                 LastName = lastName
             };
-            //user.SetCreditLimit();
+            user.SetCreditLimit();
             if (client.Type == "VeryImportantClient")
             {
                 user.HasCreditLimit = false;
