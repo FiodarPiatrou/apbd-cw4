@@ -24,6 +24,27 @@ public class UserServiceTests
         Assert.False(result);
     }
     [Fact]
+    public void AddUser_ReturnsFalseWhenEmailIsNotCorrect()
+    {
+        // Arrange
+        var userService = new UserService();
+
+        // Act
+        var result = userService.AddUser(
+            "Jan",
+            "Kowalski",
+            "kowalskikowalcom",
+            DateTime.Parse("2000-01-01"),
+            1
+        );
+        
+        
+        
+        // Assert
+        
+        Assert.False(result);
+    }
+    [Fact]
     public void AddUser_ThrowsExceptionWhenClientDoesNotExists()
     {
         // Arrange
@@ -43,7 +64,7 @@ public class UserServiceTests
             "Kowalski",
             "kowalski@kowal.com",
             DateTime.Parse("2000-01-01"),
-            100
+            1000
         );
         // Assert
         
